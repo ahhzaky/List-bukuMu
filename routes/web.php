@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,10 @@ Route::get('/my-favorite', function () {
     return view('app.my-favorite');
 });
 
-Route::get('/create-list', function () {
-    return view('app.create-list');
-});
+// Route::get('/create-list', function () {
+//     return view('app.create-list');
+// });
+
+// Route::get('/create-list', [PageController::class, 'home']);
+Route::get('/create-list', [BookController::class, 'create']);
+Route::post('/create-list', [BookController::class, 'store']);
