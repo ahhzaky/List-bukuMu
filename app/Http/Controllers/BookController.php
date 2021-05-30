@@ -26,7 +26,7 @@ class BookController extends Controller
         ]);
 
         //$request->image->store('product', 'public');
-        $path = $request->file('image')->store('public/images');
+        $path = $request->file('image')->store('public/storage/images');
 
         $books = Books::create([
             'judul'     => $request->judul,
