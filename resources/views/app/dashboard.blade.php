@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('hover-nav-home', "fw-medium active")
+
 @section('title', 'Dashoboard')
 
 @section('container')

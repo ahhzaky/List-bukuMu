@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app.dashboard');
 });
+
+Route::get('/my-favorite', function () {
+    return view('app.my-favorite');
+});
+
+Route::get('/create-list', function () {
+    return view('app.create-list');
+});
