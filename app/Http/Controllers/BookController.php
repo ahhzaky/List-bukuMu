@@ -25,15 +25,15 @@ class BookController extends Controller
             'image' => 'required',
         ]);
 
-        $request->image->store('product', 'public');
-
+        //$request->image->store('product', 'public');
+        $path = $request->file('image')->store('public/images');
 
         $books = Books::create([
             'judul'     => $request->judul,
             'nama_pengarang' => $request->nama_pengarang,
             'deskripsi'   => $request->deskripsi,
             'bintang'   => $request->bintang,
-            'image' =>  $request->image->hashName(),
+            'image' =>  $path,
         ]);
 
         // save db
