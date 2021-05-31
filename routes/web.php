@@ -34,3 +34,5 @@ Route::post('/create-list', [BookController::class, 'store']);
 
 Route::get('/my-favorite', [BookController::class, 'index']);
 Route::delete('/books/{books}', [BookController::class, 'destroy']);
+Route::get('/books/{books}/edit', [BookController::class, 'edit']);
+Route::patch('/books/{books}', [BookController::class, 'update']);

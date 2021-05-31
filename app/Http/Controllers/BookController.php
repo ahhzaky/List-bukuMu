@@ -11,7 +11,6 @@ class BookController extends Controller
     public function index()
     {
         $books = Books::all();
-        dump($books);
         return view("app.my-favorite", compact('books'));
     }
 
@@ -48,6 +47,34 @@ class BookController extends Controller
 
         return redirect('/')->with('status', 'Data mahasiswa berhasil ditambah');
     }
+
+    public function edit(Books $books)
+    {
+        return view('app.edit-list', compact('books'));
+    }
+
+    public function update(Request $request, Books $books)
+    {
+        $request->validate([
+            'judul' => 'required',
+            'nama_pengarang' => 'required',
+            'deskripsi' => 'required',
+            'bintang' => 'required',
+            'image' => 'required',
+        ]);
+        $path = $request->file('image')->store('product', 'public');
+
+        Books::where('id', $books->id)
+            ->update([
+                'judul' => $request->judul,
+                'nama_pengarang' => $request->nama_pengarang,
+                'deskripsi' => $request->deskripsi,
+                'bintang' => $request->bintang,
+                'image' =>  $path,
+            ]);
+        return redirect('/my-favorite')->with('status', 'Data mahasiswa berhasil diubah');
+    }
+
 
     public function destroy(Books $books)
     {

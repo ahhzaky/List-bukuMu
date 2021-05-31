@@ -5,8 +5,12 @@
 @section('title', 'My Favorite')
 
 @section('content-input')
+            @if (session('status'))
+               <div class="alert alert-success">
+                 {{ session('status') }}
+                </div>
+            @endif
 <div class="" style="height: 200px "></div>
-
 <section class="py-8" id="books">
     <div class="container">
       <div class="row justify-content-center">
@@ -50,7 +54,7 @@
                 </div>
                 <div class="container">
                     <form class="">
-                        <button type="submit" class="btn btn-info mb-1 mt-1" style="width: 100px">Edit</button>
+                        <a href="/books/{{$book->id}}/edit" class="btn btn-info mb-2 mt-2" style="width: 100px">Edit</a>
                     </form>
 
                     <form action="/books/{{$book->id}}" method="post" >

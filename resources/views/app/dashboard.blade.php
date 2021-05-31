@@ -7,6 +7,7 @@
 
 
 @section('container')
+
 <section class="py-0" id="home">
     <div class="bg-holder d-none d-md-block" style="background-image:url(assets/img/illustrations/hero-section.png);background-position:right bottom;background-size:contain;">
     </div>
@@ -17,6 +18,11 @@
     <!--/.bg-holder-->
 
     <div class="container">
+        @if (session('status'))
+            <div class="alert alert-success mt-8">
+                {{ session('status') }}
+            </div>
+         @endif
       <div class="row align-items-center min-vh-md-75">
         <div class="col-md-7 col-lg-6 py-6 text-sm-start text-center">
           <h1 class="mt-6 mb-sm-4 display-4 fw-semi-bold lh-sm fs-4 fs-lg-6 fs-xxl-7">Mulai membaca, <br class="d-block d-lg-none d-xl-block" />dan bagikan apa yang kamu dapat.</h1>
@@ -26,6 +32,7 @@
       </div>
     </div>
   </section>
+
 
       <!-- <section> begin ============================-->
         <section>
