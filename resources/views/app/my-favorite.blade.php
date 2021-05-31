@@ -38,8 +38,6 @@
                         </svg>
                          @endfor
                     </div>
-
-
                   </div>
                 </div>
               </div>
@@ -56,30 +54,22 @@
                     <form class="">
                         <a href="/books/{{$book->id}}/edit" class="btn btn-info mb-2 mt-2" style="width: 100px">Edit</a>
                     </form>
-
                     <form action="/books/{{$book->id}}" method="post" >
                         @method('delete')
                         @csrf
                         <button type="submit" class="btn btn-danger" style="width: 100px">Delete</button>
                     </form>
                 </div>
-
                 </div>
               </div>
             </div>
-
           </div>
-
-
         </div>
         @endforeach
         {{-- end this --}}
-
-
       </div>
     </div>
     <!-- end of .container-->
-
   </section>
 
 @endsection

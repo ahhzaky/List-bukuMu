@@ -18,7 +18,7 @@
 <form method="post" action="/books/{{$books->id}}"  enctype="multipart/form-data">
     @method('patch')
     @csrf
-    <h3 class="pb-2">Masukan Edit Buku</h3>
+    <h3 class="pb-2">Edit Buku</h3>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">

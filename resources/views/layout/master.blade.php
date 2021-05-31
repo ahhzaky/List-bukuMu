@@ -20,8 +20,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-
-
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 backdrop" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container"><a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="#"> <img class="me-3" src="assets/img/gallery/logo.png" alt="" />
@@ -46,7 +44,6 @@
           </div>
         </div>
       </nav>
-
 
     @yield("container")
 
@@ -100,8 +97,6 @@
           </div>
         </div>
       </footer>
-
-
   </main>
 
   {{-- javascript --}}

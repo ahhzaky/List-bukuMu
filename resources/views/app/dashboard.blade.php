@@ -138,19 +138,14 @@
                     </div>
                   </div>
                 </div>
-
               </div>
-
-
             </div>
-
             <div class="col-lg-12 d-flex justify-content-center">
               <button class="btn btn-lg btn-primary rounded-pill font-base" type="submit">Find More </button>
             </div>
           </div>
         </div>
         <!-- end of .container-->
-
       </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
