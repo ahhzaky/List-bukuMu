@@ -30,3 +30,7 @@ Route::get('/my-favorite', function () {
 // Route::get('/create-list', [PageController::class, 'home']);
 Route::get('/create-list', [BookController::class, 'create']);
 Route::post('/create-list', [BookController::class, 'store']);
+
+
+Route::get('/my-favorite', [BookController::class, 'index']);
+Route::delete('/books/{books}', [BookController::class, 'destroy']);

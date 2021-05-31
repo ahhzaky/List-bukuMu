@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function index()
+    {
+        $books = Books::all();
+        dump($books);
+        return view("app.my-favorite", compact('books'));
+    }
+
     public function create()
     {
         return view('app.create-list');
@@ -26,7 +33,7 @@ class BookController extends Controller
         ]);
 
         //$request->image->store('product', 'public');
-        $path = $request->file('image')->store('public/storage/images');
+        $path = $request->file('image')->store('product', 'public');
 
         $books = Books::create([
             'judul'     => $request->judul,
@@ -40,5 +47,11 @@ class BookController extends Controller
         $books->save();
 
         return redirect('/')->with('status', 'Data mahasiswa berhasil ditambah');
+    }
+
+    public function destroy(Books $books)
+    {
+        Books::destroy($books->id);
+        return redirect('/my-favorite')->with('status', 'Data mahasiswa berhasil dihapus');
     }
 }
