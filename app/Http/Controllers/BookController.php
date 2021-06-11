@@ -45,7 +45,7 @@ class BookController extends Controller
         // save db
         $books->save();
 
-        return redirect('/')->with('status', 'Data mahasiswa berhasil ditambah');
+        return redirect('/')->with('status', 'Data berhasil ditambah');
     }
 
     public function edit(Books $books)
